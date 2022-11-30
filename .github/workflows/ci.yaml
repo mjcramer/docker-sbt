@@ -38,4 +38,4 @@ jobs:
             SBT_VERSION=${{ matrix.sbt_version }}
             JAVA_VERSION=${{ matrix.java_version }}
           tags: |
-            mjcramer/sbt:${{ matrix.sbt_version }}-${{ matrix.java_version }}
+            mjcramer/sbt:${{ matrix.sbt_version }}-jdk${{ matrix.java_version }}

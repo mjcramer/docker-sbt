@@ -1,7 +1,7 @@
 
-DOCKER_REPOSITORY := coda-build
-DOCKER_TAG ?= latest # $(shell git describe --tags)-$(USER)
-DOCKER_REGISTRY ?=
+DOCKER_REPOSITORY := sbt
+DOCKER_TAG ?= $(shell git describe --tags)
+DOCKER_REGISTRY ?= mjcramer
 
 # make sure docker is installed
 DOCKER_EXISTS := @echo "Found docker..."
@@ -30,8 +30,8 @@ tag: build
 	@docker tag $(DOCKER_REPOSITORY):$(DOCKER_TAG) $(DOCKER_REGISTRY)/$(DOCKER_REPOSITORY):$(DOCKER_TAG)
 
 push: tag
-	docker push $(DOCKER_REGISTRY)/$(DOCKER_REPOSITORY):$(DOCKER_TAG)
+	@docker push $(DOCKER_REGISTRY)/$(DOCKER_REPOSITORY):$(DOCKER_TAG)
 
 clean:
-	docker rm $(shell docker ps -a -q)
+	@docker rm $(shell docker ps -a -q)
 

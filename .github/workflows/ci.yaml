@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  
+
   build:
     runs-on: ubuntu-latest
     strategy:
@@ -36,7 +36,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           build-args: |
-            SBT_VERSION={{ matrix.sbt_version }}
-            JAVA_VERSION={{ matrix.java_version }}
+            SBT_VERSION=${{ matrix.sbt_version }}
+            JAVA_VERSION=${{ matrix.java_version }}
           tags: |
-            mjcramer/sbt:{{ matrix.sbt_version }}-{{ matrix.java_version }}
+            mjcramer/sbt:${{ matrix.sbt_version }}-${{ matrix.java_version }}

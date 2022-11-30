@@ -1,5 +1,5 @@
 ARG JAVA_VERSION=17
-ARG ALPINE_VERSION=3.13
+ARG ALPINE_VERSION=3.16
 FROM amazoncorretto:$JAVA_VERSION-alpine$ALPINE_VERSION
 
 LABEL maintainer="michael.cramer@ironnetcybersecurity.com"

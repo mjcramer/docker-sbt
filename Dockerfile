@@ -1,10 +1,11 @@
-ARG JAVA_VERSION=17
+ARG JAVA_VERSION=19
 ARG ALPINE_VERSION=3.16
 FROM amazoncorretto:$JAVA_VERSION-alpine$ALPINE_VERSION
 
 LABEL maintainer="michael.cramer@ironnetcybersecurity.com"
 
 RUN apk add --no-cache \
+    bash \
     git \
     curl \
     sed \
